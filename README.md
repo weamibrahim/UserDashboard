@@ -2,7 +2,7 @@
 
 ## **INTRODUCTION**
 
-you can show all usesr and click on anu user to show detail 
+you can show all users and click on anu user to show details 
 you can search about user by id when appear click on user to show details
 
 
@@ -38,7 +38,7 @@ we can see it [https://dashboardforuser.web.app/]
 
 ## **TECHNOLOGIES**
 
-- Angular Framework v15.
+- Angular Framework .
 - HTML/CSS
 - Bootstrap
 
