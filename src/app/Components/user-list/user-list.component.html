@@ -1,0 +1,39 @@
+<div class="container-fluid my-5">
+
+          <div class="d-flex justify-content-center my-3">
+                <button (click)="prevPage()" [disabled]="currentPage === 1">
+                        <i class="fa-solid fa-caret-left fs-2"></i>
+                </button>
+                <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+                        <i class="fa-solid fa-caret-right fs-2"></i>
+                </button>
+           </div>
+           <div class="row justify-content-center text-center">
+                <div class="col-lg-6 mb-3">
+                     <div class="shadow p-3 mb-5 bg-body rounded rounded-3">
+                          <div class="row row-cols-1 row-cols-md-3 g-4">
+                              <div *ngIf="isLoading; else userList">
+                                   <div class="d-flex justify-content-between">
+                                       <h2>Loading...</h2>
+                                       <div class="spinner-border ms-auto" role="status" style="width: 2rem; height: 2rem;" aria-hidden="true">
+                                       </div>
+                                   </div>
+                               </div>
+                               <ng-template #userList >
+                                      <div class="col " *ngFor="let user of users" >
+                                           <div class="card " >
+                                               <img [src]="user.avatar" alt="User Avatar" class="card-img  animate__animated animate__fadeInDown">
+                                              <div class="card-body">
+                                                    <h4> {{ user.id }}</h4>
+                                                    <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+                                                    <p class="card-text">Email: {{ user.email }}</p>
+                                                     <button class="btn btn-info" (click)="goToUserDetails(user.id)">View Details</button>
+                                               </div>
+                                            </div>
+                                      </div>
+                               </ng-template>
+                           </div>
+                      </div>
+                 </div>
+             </div>
+</div>

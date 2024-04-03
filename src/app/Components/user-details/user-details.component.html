@@ -1,0 +1,13 @@
+<div class="container-fluid my-5  animate__animated animate__zoomIn">
+  <div class=" d-flex justify-content-center  text-center ">
+    <div class="col-lg-6 shadow p-3 mb-5 bg-body rounded rounded-3">
+      <div *ngIf="user">
+        <p>User ID: {{ user.id }}</p>
+        <img [src]="user.avatar" alt="User Avatar" class="img-fluid rounded rounded-3">
+        <p>{{ user.first_name }} {{ user.last_name }}</p>
+        <p>Email: {{ user.email }}</p>
+      </div>
+      <button (click)="goToUserList()" class="btn btn-info">Back to User List</button>
+    </div>
+  </div>
+</div>

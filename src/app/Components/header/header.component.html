@@ -1,0 +1,35 @@
+<!-- =============================================Navigation Bar==================================================== -->
+<nav class="navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between align-items-center p-2">
+        <div>
+            <div class="d-flex align-items-center">
+                <i class="fa-solid fa-users m-2"></i>
+                <h3 style="font-family: Sofia; margin-bottom: 0;">User Dashboard</h3>
+            </div>
+        </div>
+
+        <div>
+            <input type="text" class="form-control" placeholder="Search by ID" [(ngModel)]="searchTerm"
+                (input)="searchUsers()">
+        </div>
+    </div>
+</nav>
+
+
+<!-- ===========================================================Search Results==================================================== -->
+<div class="container-fluid my-5  ">
+    <div class=" d-flex justify-content-center  text-center ">
+        <div class="col-lg-6 shadow p-3 mb-5 bg-body rounded rounded-3">
+            <div *ngIf="searchTerm !== '' && users.length > 0" class="search-results ">
+                <div *ngFor="let user of users" class="animate__animated animate__flipInX">
+
+                    <p>User ID: {{ user.id }}</p>
+                    <img [src]="user.avatar" alt="User Avatar" class="img-fluid rounded rounded-3">
+                    <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+                    <p>Email: {{ user.email }}</p>
+                    <button class="btn btn-info" (click)="goToUserDetails(user.id)">View Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
