@@ -33,7 +33,7 @@ we can see it [https://dashboardforuser.web.app/]
     ng serve -o
   </pre>
 
-<h4>Open your web browser and navigate to `http://localhost:7000` to access the Threads & Beads website.</h4><br>
+<h4>Open your web browser and navigate to `http://localhost:4200` to access the Threads & Beads website.</h4><br>
 
 
 ## **TECHNOLOGIES**
